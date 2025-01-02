@@ -23,37 +23,37 @@ const { terabox, ytdl } = require('./lib/scraper.js')
 const messages = {
   error: {
     status: 404,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Error, Service Unavailable",
   },
   notRes: {
     status: 404,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Error, Invalid JSON Result",
   },
   query: {
     status: 400,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Please input parameter query!",
   },
   amount: {
     status: 400,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Please input parameter amount!",
   },
   codeqr: {
     status: 400,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Please input parameter codeqr!",
   },
   url: {
     status: 400,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Please input parameter URL!",
   },
   notUrl: {
     status: 404,
-    creator: "aan",
+    creator: "WaysModzz",
     result: "Error, Invalid URL",
   },
 };
@@ -104,7 +104,7 @@ app.get('/api/download/terabox', async (req, res) => {
     if (!url) {
       return res.status(400).json({
         status: false,
-        creator: "aan",
+        creator: "WaysModzz",
         error: "Isi Parameter Url.",
       });
     }
@@ -112,13 +112,13 @@ app.get('/api/download/terabox', async (req, res) => {
     if (!results || results.length === 0) {
       return res.status(404).json({
         status: false,
-        creator: "aan",
+        creator: "WaysModzz",
         error: "No files found or unable to generate download links.",
       });
     }
     return res.status(200).json({
       success: true,
-      creator: "aan",
+      creator: "WaysModzz",
       results: results,
       request_at: new Date(),
     });
@@ -126,7 +126,7 @@ app.get('/api/download/terabox', async (req, res) => {
     console.error("Error:", error.message);
     return res.status(500).json({
       status: false,
-      creator: "aan",
+      creator: "WaysModzz",
       error: "Internal server error.",
     });
   }
@@ -139,7 +139,7 @@ app.get('/api/download/spotify', async (req, res) => {
     if (!url) {
       return res.status(400).json({
         status: false,
-        creator: "aan",
+        creator: "WaysModzz",
         error: "Isi Parameter Url."
       });
     }
@@ -151,7 +151,7 @@ app.get('/api/download/spotify', async (req, res) => {
 
     return res.status(200).json({
       status: true,
-      creator: "aan",
+      creator: "WaysModzz",
       metadata: {
         album_artist: metadata.album_artist,
         album_name: metadata.album_name,
@@ -168,7 +168,7 @@ app.get('/api/download/spotify', async (req, res) => {
     console.error("Error:", e.message);
     return res.status(500).json({
       status: false,
-      creator: "aan", 
+      creator: "WaysModzz", 
       error: "Internal server error."
     });
   }
@@ -181,7 +181,7 @@ app.get('/api/download/ytdl', async (req, res) => {
     if (!url || !videoQuality || !audioQuality) {
       return res.status(400).json({
         success: false,
-        creator: "aan",
+        creator: "WaysModzz",
         error: "Isi Parameter url, videoQuality, dan audioQuality.",
       });
     }
@@ -193,13 +193,13 @@ app.get('/api/download/ytdl', async (req, res) => {
       const result = await ytdl.downloadVideoAndAudio(url, videoQualityIndex, audioQualityIndex);
       return res.status(200).json({
         success: true,
-        creator: "aan",
+        creator: "WaysModzz",
         result,
       });
     } catch (error) {
       return res.status(400).json({
         success: false,
-        creator: "aan",
+        creator: "WaysModzz",
         error: error.message,
       });
     }
@@ -207,7 +207,7 @@ app.get('/api/download/ytdl', async (req, res) => {
     console.error('Error:', error.message);
     return res.status(500).json({
       success: false,
-      creator: "aan",
+      creator: "WaysModzz",
       error: 'Internal server error.',
     });
   }
