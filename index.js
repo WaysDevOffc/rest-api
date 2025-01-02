@@ -215,7 +215,7 @@ app.get('/api/download/ytdl', async (req, res) => {
 
 app.get('/api/orkut/createpayment', async (req, res) => {
     const { apikey } = req.query;    
-    if (apikey !== 'aanboy') {
+    if (apikey !== 'WaysModzz') {
     return res.status(403).json({ error: "Isi Parameter Apikey" });
     }
     const { amount } = req.query;
@@ -237,7 +237,7 @@ app.get('/api/orkut/createpayment', async (req, res) => {
 app.get('/api/orkut/cekstatus', async (req, res) => {
     const { apikey, merchant, keyorkut } = req.query;
     
-    if (apikey !== 'aanboy') {
+    if (apikey !== 'WaysModzz') {
     return res.status(403).json({ error: "Isi Parameter Apikey" });
     }
     
